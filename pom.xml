@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>jp.memento_mori</groupId>
+  <artifactId>webCrawler</artifactId>
+  <version>1.0</version>
+  
+  <dependencies>
+  	<dependency>
+        <groupId>edu.uci.ics</groupId>
+        <artifactId>crawler4j</artifactId>
+        <version>3.5</version>
+        <type>jar</type>
+        <scope>compile</scope>
+    </dependency>
+   	<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.10</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.glassfish.grizzly</groupId>
+    	<artifactId>grizzly-http-server</artifactId>
+    	<version>2.3.13</version>
+    </dependency>
+  </dependencies>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+  			<artifactId>maven-compiler-plugin</artifactId>
+  			<configuration>
+  				<encoding>UTF-8</encoding>
+  				<source>1.7</source>
+  				<target>1.7</target>
+  			</configuration>
+  		</plugin>
+  		<plugin>
+  			<artifactId>maven-surefire-plugin</artifactId>
+  			<configuration>
+  				<systemPropertyVariables>
+  					<java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
+  					<test.resource.dir>${basedir}/src/test/resources/</test.resource.dir>
+  				</systemPropertyVariables>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
+</project>
